@@ -74,7 +74,7 @@ photon_3_rpms: &photon_3_rpms
 photon_4_rpms: &photon_4_rpms
   jq:
 
-arch: "amd64"
+arch: "arm64"
 containerd_version: ""
 containerd_wasm_shims_runtimes: ""
 kubernetes_cni_source_type: ""
@@ -326,7 +326,6 @@ ubuntu:
         timeout: 0
     package:
       open-vm-tools:
-      linux-cloud-tools-virtual:
       linux-tools-virtual:
       <<: *chrony_deb
     service:
@@ -339,7 +338,6 @@ ubuntu:
         enabled: true
         running: true
     package:
-      linux-cloud-tools-virtual:
       linux-tools-virtual:
     command:
       snap list | grep 'amazon-ssm-agent' | awk -F' ' '{print $1}':
@@ -354,7 +352,6 @@ ubuntu:
         timeout: 0
   gcp:
     package:
-      linux-cloud-tools-virtual:
       linux-tools-virtual:
     command:
       find -L /bin -maxdepth 1 -type f -executable -printf "%f\n" | grep -Fx 'gcloud':
@@ -368,7 +365,6 @@ ubuntu:
     command:
   outscale:
     package:
-      linux-cloud-tools-virtual:
       linux-tools-virtual:
   ova:
     service:
@@ -376,7 +372,6 @@ ubuntu:
         enabled: true
         running: true
     package:
-      linux-cloud-tools-virtual:
       linux-tools-virtual:
       open-vm-tools:
       cloud-guest-utils:
@@ -384,7 +379,6 @@ ubuntu:
       cloud-initramfs-dyn-netconf:
   qemu:
     package:
-      linux-cloud-tools-virtual:
       linux-tools-virtual:
       open-vm-tools:
       cloud-guest-utils:
@@ -395,11 +389,9 @@ ubuntu:
       cloud-guest-utils:
       cloud-initramfs-copymods:
       cloud-initramfs-dyn-netconf:
-      linux-cloud-tools-generic:
       linux-tools-generic:
   nutanix:
     package:
-      linux-cloud-tools-virtual:
       linux-tools-virtual:
       cloud-guest-utils:
       cloud-initramfs-copymods:

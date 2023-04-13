@@ -41,9 +41,3 @@
 #    regexp: '(?i)lock_passwd: True'
 #    replace: 'lock_passwd: False'
 
-- name: Disable Hyper-V KVP protocol daemon on Ubuntu
-  systemd:
-    name: hv-kvp-daemon
-    state: stopped
-    enabled: false
-  when: ansible_os_family == "Debian"

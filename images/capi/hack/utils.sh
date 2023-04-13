@@ -29,8 +29,8 @@ esac
 
 _hostarch=$(uname -m)
 case "${_hostarch}" in
-*64*)
-  HOSTARCH=amd64
+*aarch64*)
+  HOSTARCH=arm64
   ;;
 *386*)
   HOSTARCH=386
