@@ -1,5 +1,5 @@
 {
-    "boot_command_prefix": "c<wait>linux /casper/vmlinuz console=ttyAMA0 autoinstall ds='nocloud-net;s=http://10.8.1.233:8001/metadata/' --- <enter><wait>initrd /casper/initrd<enter><wait>boot<enter>",
+    "boot_command_prefix": "c<wait>linux /casper/vmlinuz console=ttyAMA0 autoinstall ds='nocloud-net;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/' --- <enter><wait>initrd /casper/initrd<enter><wait>boot<enter>",
     "build_name": "ubuntu-2204-efi",
     "distro_name": "ubuntu",
     "boot_type": "uefi",
