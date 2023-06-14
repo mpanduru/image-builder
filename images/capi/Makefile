@@ -300,6 +300,7 @@ PACKER_POWERVS_NODE_FLAGS := $(foreach f,$(abspath $(COMMON_POWERVS_VAR_FILES)),
 ## --------------------------------------
 CENTOS_VERSIONS			:=	centos-7
 FLATCAR_VERSIONS		:=	flatcar
+MARINER_VERSIONS		:=	mariner-2
 PHOTON_VERSIONS			:=	photon-3 photon-4
 RHEL_VERSIONS			:=	rhel-7 rhel-8
 ROCKYLINUX_VERSIONS     :=  rockylinux-8
@@ -316,6 +317,7 @@ endif
 export FLATCAR_CHANNEL FLATCAR_VERSION
 
 PLATFORMS_AND_VERSIONS	:=	$(CENTOS_VERSIONS) \
+							$(MARINER_VERSIONS) \
 							$(PHOTON_VERSIONS) \
 							$(RHEL_VERSIONS) \
 							$(ROCKYLINUX_VERSIONS) \
@@ -626,6 +628,7 @@ build-azure-vhd-ubuntu-1804: ## Builds Ubuntu 18.04 VHD image for Azure
 build-azure-vhd-ubuntu-2004: ## Builds Ubuntu 20.04 VHD image for Azure
 build-azure-vhd-ubuntu-2204: ## Builds Ubuntu 22.04 VHD image for Azure
 build-azure-vhd-centos-7: ## Builds CentOS 7 VHD image for Azure
+build-azure-vhd-mariner-2: ## Builds Mariners 2 VHD image for Azure
 build-azure-vhd-rhel-8: ## Builds RHEL 8 VHD image for Azure
 build-azure-vhd-windows-2019: ## Builds for Windows Server 2019
 build-azure-vhd-windows-2019-containerd: ## Builds for Windows Server 2019 with containerd

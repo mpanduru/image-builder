@@ -27,14 +27,14 @@
   rpm_key:
     state: present
     key: "{{ epel_rpm_gpg_key }}"
-  when: epel_rpm_gpg_key != ""
+  when: ansible_distribution == "RedHat" and epel_rpm_gpg_key != ""
 
 - name: add epel repo
   yum:
     name: "{{ redhat_epel_rpm }}"
     state: present
     lock_timeout: 60
-  when: redhat_epel_rpm != ""
+  when: ansible_distribution == "RedHat" and redhat_epel_rpm != ""
 
 - import_tasks: rpm_repos.yml
 
