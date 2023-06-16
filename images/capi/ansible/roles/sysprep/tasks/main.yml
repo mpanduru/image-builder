@@ -18,14 +18,14 @@
 - import_tasks: flatcar.yml
   when: ansible_os_family == "Flatcar"
 
+- import_tasks: redhat.yml
+  when: ansible_os_family == "RedHat"
+
 - import_tasks: mariner.yml
   when: ansible_os_family == "Common Base Linux Mariner"
 
 - import_tasks: photon.yml
   when: ansible_os_family == "VMware Photon OS"
-
-- import_tasks: redhat.yml
-  when: ansible_os_family == "RedHat"
 
 - name: Remove containerd http proxy conf file if needed
   file:
