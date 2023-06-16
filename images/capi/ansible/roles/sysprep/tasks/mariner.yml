@@ -27,7 +27,7 @@
 - import_tasks: rpm_repos.yml
 
 - name: Patch up nftables config
-  command: "echo > /etc/sysconfig/nftables.conf"
+  command: /bin/echo "" >> /etc/sysconfig/nftables.conf
 
 - name: Disable swap service and ensure it is masked on Mariner
   systemd:
