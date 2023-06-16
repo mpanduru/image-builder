@@ -13,7 +13,7 @@
 # limitations under the License.
 
 ---
-- name: Enable IPv4 forwarding
+- name: Enable IP forwarding for Kubernetes
   copy:
     src: etc/sysctl.d/99-kubernetes-ip-forwarding.conf
     dest: /etc/sysctl.d/99-kubernetes-ip-forwarding.conf
