@@ -60,6 +60,7 @@ common_mariner_rpms: &common_mariner_rpms
   chrony:
   curl:
   jq:
+  lsof:
   python3-pip:
   socat:
   sysstat:
