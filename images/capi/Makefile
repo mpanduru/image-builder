@@ -350,7 +350,7 @@ OPENSTACK_BUILD_NAMES	?=	openstack-ubuntu-2004 openstack-ubuntu-2204 openstack-f
 
 OSC_BUILD_NAMES 			?=	osc-ubuntu-2004
 
-QEMU_BUILD_NAMES			?=	qemu-ubuntu-1804 qemu-ubuntu-2004 qemu-ubuntu-2204 qemu-centos-7 qemu-ubuntu-2004-efi qemu-rhel-8 qemu-rockylinux-8 qemu-flatcar
+QEMU_BUILD_NAMES			?=	qemu-ubuntu-1804 qemu-ubuntu-2004 qemu-ubuntu-2204 qemu-ubuntu-2204-arm64 qemu-centos-7 qemu-ubuntu-2004-efi qemu-rhel-8 qemu-rockylinux-8 qemu-flatcar
 QEMU_KUBEVIRT_BUILD_NAMES	:= $(addprefix kubevirt-,$(QEMU_BUILD_NAMES))
 
 RAW_BUILD_NAMES                        ?=      raw-ubuntu-1804 raw-ubuntu-2004 raw-ubuntu-2004-efi raw-flatcar raw-rhel-8
@@ -734,6 +734,7 @@ build-qemu-ubuntu-1804: ## Builds Ubuntu 18.04 QEMU image
 build-qemu-ubuntu-2004: ## Builds Ubuntu 20.04 QEMU image
 build-qemu-ubuntu-2004-efi: ## Builds Ubuntu 20.04 QEMU image that EFI boots
 build-qemu-ubuntu-2204: ## Builds Ubuntu 22.04 QEMU image
+build-qemu-ubuntu-2204-arm64: ## Builds Ubuntu 22.04 QEMU ARM64 image
 build-qemu-centos-7: ## Builds CentOS 7 QEMU image
 build-qemu-rhel-8: ## Builds RHEL 8 QEMU image
 build-qemu-rockylinux-8: ## Builds Rocky 8 QEMU image
@@ -867,6 +868,7 @@ validate-qemu-ubuntu-1804: ## Validates Ubuntu 18.04 QEMU image packer config
 validate-qemu-ubuntu-2004: ## Validates Ubuntu 20.04 QEMU image packer config
 validate-qemu-ubuntu-2004-efi: ## Validates Ubuntu 20.04 QEMU EFI image packer config
 validate-qemu-ubuntu-2204: ## Validates Ubuntu 22.04 QEMU image packer config
+validate-qemu-ubuntu-2204-arm64: ## Validates Ubuntu 22.04 QEMU ARM64 image packer config
 validate-qemu-centos-7: ## Validates CentOS 7 QEMU image packer config
 validate-qemu-rhel-8: ## Validates RHEL 8 QEMU image
 validate-qemu-rockylinux-8: ## Validates Rocky Linux 8 QEMU image packer config
