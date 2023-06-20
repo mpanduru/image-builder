@@ -1,4 +1,11 @@
+{% if ansible_architecture == "aarch64" %}
+deb http://ports.ubuntu.com/ubuntu-ports {{ ansible_distribution_release }} main restricted universe
+deb http://ports.ubuntu.com/ubuntu-ports {{ ansible_distribution_release }}-updates main restricted universe
+deb http://ports.ubuntu.com/ubuntu-ports {{ ansible_distribution_release }}-backports main restricted universe
+deb http://ports.ubuntu.com/ubuntu-ports {{ ansible_distribution_release }}-security main restricted universe
+{% else %}
 deb http://us.archive.ubuntu.com/ubuntu {{ ansible_distribution_release }} main restricted universe
 deb http://us.archive.ubuntu.com/ubuntu {{ ansible_distribution_release }}-updates main restricted universe
 deb http://us.archive.ubuntu.com/ubuntu {{ ansible_distribution_release }}-backports main restricted universe
 deb http://security.ubuntu.com/ubuntu {{ ansible_distribution_release }}-security main restricted universe
+{% endif %}
