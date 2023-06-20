@@ -401,7 +401,9 @@ ubuntu:
       cloud-initramfs-dyn-netconf:
   qemu:
     package:
+      {{if eq .Vars.arch "amd64"}}
       linux-cloud-tools-virtual:
+      {{end}}
       linux-tools-virtual:
       open-vm-tools:
       cloud-guest-utils:
