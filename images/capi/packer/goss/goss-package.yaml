@@ -55,6 +55,14 @@ package:
     {{$key}}: {{$val}}
   {{end}}
 {{end}}
+# Looping over provider specific packages for an OS and an arch
+{{range $name, $vers := index .Vars .Vars.OS .Vars.PROVIDER .Vars.arch "package"}}
+  {{$name}}:
+    installed: true
+  {{range $key, $val := $vers}}
+    {{$key}}: {{$val}}
+  {{end}}
+{{end}}
 
 # Iterate thru different OS Versions like RHEL7/8, Photon 3/4(future) etc.
 {{$distro_version := .Vars.OS_VERSION}}
