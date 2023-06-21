@@ -1,0 +1,15 @@
+{
+  "boot_command_prefix": "c<wait>linux /casper/vmlinuz --- autoinstall ds='nocloud-net;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/22.04/'<enter><wait>initrd /casper/initrd<enter><wait>boot<enter><enter><tab>",
+  "build_name": "mariner-2",
+  "distro_arch": "amd64",
+  "distro_name": "cbl-mariner",
+  "distro_version": "2.0",
+  "http_directory": "",
+  "guest_os_type": "generic-linux",
+  "iso_checksum": "a32238f58f68b348f136c54620bb3a3c60b446ec21fdb9185ecd8979c0fc6e8b",
+  "iso_checksum_type": "sha256",
+  "iso_url": "https://aka.ms/mariner-2.0-x86_64-iso",
+  "os_display_name": "CBL-Mariner 2",
+  "shutdown_command": "shutdown -P now",
+  "unmount_iso": "true"
+}
