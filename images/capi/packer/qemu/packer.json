@@ -28,7 +28,8 @@
       "ssh_timeout": "2h",
       "ssh_username": "{{user `ssh_username`}}",
       "type": "qemu",
-      "vm_name": "{{user `vm_name`}}"
+      "vm_name": "{{user `vm_name`}}",
+      "vnc_bind_address": "0.0.0.0"
     }
   ],
   "post-processors": [
