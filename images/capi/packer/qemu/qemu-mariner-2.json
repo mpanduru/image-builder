@@ -1,5 +1,5 @@
 {
-  "boot_command_prefix": "<esc><wait><rightCtrlOn>c<rightCtrlOff><tab><enter><wait>",
+  "boot_command_prefix": "<wait><enter><enter><enter><enter><tab><tab><rightArrow><enter><enter>builder<enter>builderpassword<enter>builderpassword<enter><wait><enter>",
   "build_name": "mariner-2",
   "distro_arch": "amd64",
   "distro_name": "cbl-mariner",
