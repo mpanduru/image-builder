@@ -21,65 +21,6 @@
       "net_device": "virtio-net",
       "output_directory": "{{user `output_directory`}}",
       "qemu_binary": "{{user `qemu_binary`}}",
-      "qemuargs": [
-        [
-          "-machine",
-          "virt,accel=kvm,gic-version=host"
-        ],
-        [
-          "-cpu",
-          "host"
-        ],
-        [
-          "-k",
-          "en-us"
-        ],
-        [
-          "-boot",
-          "strict=off"
-        ],
-        [
-          "-device",
-          "usb-ehci"
-        ],
-        [
-          "-device",
-          "usb-kbd"
-        ],
-        [
-          "-device",
-          "usb-mouse"
-        ],
-        [
-          "-drive",
-          "file=./output/{{user `vm_name`}}/{{user `vm_name`}},if=none,id=drive0,cache=writeback"
-        ],
-        [
-          "-device",
-          "virtio-blk,drive=drive0,bootindex=0"
-        ],
-        [
-          "-drive",
-          "file=/var/lib/libvirt/images/mariner_uefi_image.img,if=none,id=drive1,cache=writeback"
-        ],
-        [
-          "-device",
-          "virtio-blk,drive=drive1,bootindex=1"
-        ],
-        [
-          "-drive",
-          "file=/var/lib/libvirt/images/capi.fd,format=raw,if=pflash"
-        ],
-        [
-          "-drive",
-          "file=/var/lib/libvirt/images/capi-nvmram.fd,format=raw,if=pflash"
-        ],
-        "-usb",
-        [
-          "-device",
-          "virtio-gpu-pci"
-        ]
-      ],
       "shutdown_command": "echo '{{user `ssh_password`}}' | sudo -S -E sh -c 'usermod -L {{user `ssh_username`}} && {{user `shutdown_command`}}'",
       "ssh_password": "{{user `ssh_password`}}",
       "ssh_timeout": "2h",
@@ -251,7 +192,7 @@
     "oem_id": "",
     "output_directory": "./output/{{user `build_name`}}-kube-{{user `kubernetes_semver`}}",
     "python_path": "",
-    "qemu_binary": "qemu-system-aarch64",
+    "qemu_binary": "qemu-system-x86_64",
     "ssh_password": "builder",
     "ssh_username": "builder",
     "vm_name": "{{user `build_name`}}-kube-{{user `kubernetes_semver`}}"

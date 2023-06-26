@@ -88,7 +88,7 @@ photon_3_rpms: &photon_3_rpms
 photon_4_rpms: &photon_4_rpms
   jq:
 
-arch: "arm64"
+arch: "amd64"
 containerd_version: ""
 containerd_wasm_shims_runtimes: ""
 kubernetes_cni_source_type: ""

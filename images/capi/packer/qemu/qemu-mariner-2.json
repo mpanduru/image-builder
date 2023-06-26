@@ -1,7 +1,7 @@
 {
   "boot_command_prefix": "<wait><wait><enter><enter><enter><enter><tab><tab><right><enter><enter>builder<enter>builderpassword<enter>builderpassword<enter><enter><enter>",
   "build_name": "mariner-2",
-  "distro_arch": "arm64",
+  "distro_arch": "amd64",
   "distro_name": "cbl-mariner",
   "distro_version": "2.0",
   "http_directory": "",
