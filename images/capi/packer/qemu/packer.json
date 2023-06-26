@@ -3,7 +3,19 @@
     {
       "accelerator": "{{user `accelerator`}}",
       "boot_command": [
-        "{{user `boot_command_prefix`}}"
+        "<esc><wait>",
+        "<rightCtrlOn>c<rightCtrlOff><tab><enter><wait>",
+        " cd /root <enter><wait>",
+        " curl http://10.7.1.73/mariner-config.json -o $HOME/mariner-config.json <enter><wait>",
+        " mkdir -p $HOME/config <enter><wait>",
+        " cp -R /mnt/cdrom/config/* $HOME/config <enter><wait>",
+        " mkdir -p $HOME/config/postinstallscripts <enter><wait>",
+        " curl http://10.7.1.73/core-packages.json -o $HOME/config/core-packages.json <enter><wait>",
+        " curl http://10.7.1.73/postinstallscript.sh -o $HOME/config/postinstallscripts/postinstallscript.sh <enter><wait>",
+        " chmod 755 $HOME/config/postinstallscripts/postinstallscript.sh <enter><wait>",
+        " systemctl stop espeakup <enter><wait>",
+        " $HOME/runliveinstaller -u $HOME/mariner-config.json -c $HOME/config <enter><wait>",
+        " <wait3m>"
       ],
       "boot_wait": "{{user `boot_wait`}}",
       "cpus": "{{user `cpus`}}",

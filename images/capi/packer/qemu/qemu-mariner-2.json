@@ -1,10 +1,12 @@
 {
-  "boot_command_prefix": "<wait><wait><enter><enter><enter><enter><tab><tab><right><enter><enter>builder<enter>builderpassword<enter>builderpassword<enter><enter><enter>",
+  "boot_command_prefix": "",
+  "boot_command_suffix": "",
   "build_name": "mariner-2",
   "distro_arch": "amd64",
   "distro_name": "cbl-mariner",
   "distro_version": "2.0",
   "http_directory": "",
+  "firmware": "OVMF.fd",
   "guest_os_type": "generic-linux",
   "iso_checksum": "a32238f58f68b348f136c54620bb3a3c60b446ec21fdb9185ecd8979c0fc6e8b",
   "iso_checksum_type": "sha256",
