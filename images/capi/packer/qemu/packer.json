@@ -11,9 +11,8 @@
       "cpus": "{{user `cpus`}}",
       "disk_compression": "{{ user `disk_compression`}}",
       "disk_discard": "{{user `disk_discard`}}",
-      "disk_interface": "virtio-scsi",
+      "disk_interface": "virtio",
       "disk_size": "{{user `disk_size`}}",
-      "firmware": "{{user `firmware`}}",
       "format": "{{user `format`}}",
       "headless": "{{user `headless`}}",
       "http_directory": "{{user `http_directory`}}",
@@ -34,41 +33,8 @@
       "vnc_bind_address": "0.0.0.0",
       "vnc_port_max": 5903,
       "vnc_port_min": 5903,
-      "qemuargs": [
-        [
-          "-boot",
-          "strict=off"
-        ],
-        [
-          "-drive",
-          "file=./output/{{user `vm_name`}}/{{user `vm_name`}},if=none,id=drive0,cache=writeback"
-        ],
-        [
-          "-device",
-          "virtio-blk,drive=drive0,bootindex=0"
-        ],
-        [
-          "-drive",
-          "file={{ user `user_home`}}/.cache/packer/{{ user `iso_cache_name`}}.iso,if=none,id=drive1,cache=writeback"
-        ],
-        [
-          "-device",
-          "virtio-blk,drive=drive1,bootindex=1"
-        ],
-        [
-          "-drive",
-          "file=/var/lib/libvirt/images/capi.fd,format=raw,if=pflash"
-        ],
-        [
-          "-drive",
-          "file=/var/lib/libvirt/images/capi-nvmram.fd,format=raw,if=pflash"
-        ],
-        "-usb",
-        [
-          "-device",
-          "virtio-gpu-pci"
-        ]
-      ]
+      "efi_firmware_code": "/usr/share/AAVMF/AAVMF_CODE.fd",
+      "efi_firmware_vars": "/usr/share/AAVMF/AAVMF_VARS.fd"
     }
   ],
   "post-processors": [
