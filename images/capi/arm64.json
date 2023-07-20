@@ -12,7 +12,7 @@
   "memory": "16384",
   "qemu_binary": "qemu-system-aarch64",
   "boot_command_prefix": "e<down><down><down><down><down><down><left> ro quiet init=/bin/bash<leftCtrlOn>x<leftCtrlOff><wait15s>mount -n -o remount,rw /<enter><wait>passwd core<enter><wait>core<enter><wait>core<enter><wait>exec /sbin/init<enter><wait15s>core<enter><wait>core<enter><wait>sudo systemctl mask sshd.socket --now<enter>curl -sLo /tmp/i.json ",
-  "boot_command_suffix": "/bootstrap.json<enter>curl -sLo f.bin.bz2 http://10.8.10.2:8001/f.bin.bz2 && sed -i \"s|BUILDERPASSWORDHASH|$(mkpasswd -5 {{user `ssh_password`}})|\" /tmp/i.json<enter>sudo flatcar-install -d /dev/vda -C {{user `channel_name`}} -V {{user `release_version`}} -i /tmp/i.json -f f.bin.bz2 -v && sudo reboot<enter>",
+  "boot_command_suffix": "/bootstrap-pass-auth.json<enter>curl -sLo f.bin.bz2 http://10.8.10.2:8001/f.bin.bz2 && sed -i \"s|BUILDERPASSWORDHASH|$(mkpasswd -5 {{user `ssh_password`}})|\" /tmp/i.json<enter>sudo flatcar-install -d /dev/vda -C {{user `channel_name`}} -V {{user `release_version`}} -i /tmp/i.json -f f.bin.bz2 -v && sudo reboot<enter>",
   "boot_wait": "15s",
   "iso_checksum": "http://10.7.132.185/flatcar-arm64-iso-image.iso.DIGESTS.asc",
   "iso_url": "http://10.7.132.185/flatcar-arm64.iso"
