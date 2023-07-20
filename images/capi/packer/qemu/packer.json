@@ -8,21 +8,31 @@
         "{{user `boot_command_suffix`}}"
       ],
       "boot_wait": "{{user `boot_wait`}}",
+      "cpu_model": "host",
       "cpus": "{{user `cpus`}}",
       "disk_compression": "{{ user `disk_compression`}}",
       "disk_discard": "{{user `disk_discard`}}",
-      "disk_interface": "virtio-scsi",
+      "disk_interface": "virtio",
       "disk_size": "{{user `disk_size`}}",
+      "efi_firmware_code": "/usr/share/AAVMF/AAVMF_CODE.fd",
+      "efi_firmware_vars": "/usr/share/AAVMF/AAVMF_VARS.fd",
       "firmware": "{{user `firmware`}}",
       "format": "{{user `format`}}",
       "headless": "{{user `headless`}}",
       "http_directory": "{{user `http_directory`}}",
       "iso_checksum": "{{user `iso_checksum_type`}}:{{user `iso_checksum`}}",
       "iso_url": "{{user `iso_url`}}",
+      "machine_type": "virt",
       "memory": "{{user `memory`}}",
       "net_device": "virtio-net",
       "output_directory": "{{user `output_directory`}}",
       "qemu_binary": "{{user `qemu_binary`}}",
+      "qemuargs": [
+        [
+          "-monitor",
+          "none"
+        ]
+      ],
       "shutdown_command": "echo '{{user `ssh_password`}}' | sudo -S -E sh -c 'usermod -L {{user `ssh_username`}} && {{user `shutdown_command`}}'",
       "ssh_password": "{{user `ssh_password`}}",
       "ssh_timeout": "2h",
